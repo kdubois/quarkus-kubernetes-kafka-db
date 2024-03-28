@@ -9,7 +9,9 @@ It features:
 
 You can run this demo on your local machine with Quarkus Dev Mode (see below) which will spin up a Kafka and PostgreSQL testcontainer. 
 The application.properties file shows how to set limits, requests, secrets and configmaps for your kubernetes environment. 
-You will have to create the configmap and secret before deploying the application. Examples can be found in the src/main/kube folder. 
+You will have to create the configmap and secret before deploying the application. Examples can be found in the src/main/kube folder.
+You will also need to create a postgresql database (db 'quarkus') and a Kafka cluster. If you need a simple ephemeral kafka instance to test with on your cluster, you can apply the yaml for it from here:
+https://gist.github.com/hpgrahsl/47486d0d7f5197b38611ca0e066f2914
 
 PS: this is an MVP so no proper validation or tests are in place (yet) :)
 
