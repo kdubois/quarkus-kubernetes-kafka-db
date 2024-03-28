@@ -1,0 +1,7 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mydata
+immutable: false
+data:
+  quarkus.kubernetes.resources.requests.cpu: '300'
