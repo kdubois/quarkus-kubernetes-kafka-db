@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: mydata
+  name: myproperties
 immutable: false
 data:
-  quarkus.kubernetes.resources.requests.cpu: '300'
+  'mp.messaging.connector.smallrye-kafka.bootstrap.servers': kafka-no-keeper-bootstrap:9092
