@@ -1,8 +1,21 @@
-# kubenative
+# Kubernetes Native Quarkus
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This application demonstrates how to create a Quarkus application that retrieves messages from a Kafka topic ("power") and inserts the events into a database. 
+
+It features:
+    *a DevicePower class that represents the database entity
+    *a KafkaResource class that shows how to retrieve messages from a Kafka topic
+    *a PowerResource class that returns the values from the database table
+
+You can run this demo on your local machine with Quarkus Dev Mode (see below) which will spin up a Kafka and PostgreSQL testcontainer. 
+The application.properties file shows how to set limits, requests, secrets and configmaps for your kubernetes environment. 
+You will have to create the configmap and secret before deploying the application. Examples can be found in the src/main/kube folder. 
+
+PS: this is an MVP so no proper validation or tests are in place (yet) :)
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+
+
 
 ## Running the application in dev mode
 
