@@ -7,17 +7,30 @@ It features:
     *a KafkaResource class that shows how to retrieve messages from a Kafka topic
     *a PowerResource class that returns the values from the database table
 
-You can run this demo on your local machine with Quarkus Dev Mode (see below) which will spin up a Kafka and PostgreSQL testcontainer. 
-The application.properties file shows how to set limits, requests, secrets and configmaps for your kubernetes environment. 
+You can run this demo on your local machine with Quarkus Dev Mode (see below) which will spin up a Kafka and PostgreSQL testcontainer.
+The application.properties file shows how to set limits, requests, secrets and configmaps for your kubernetes environment.
+
+## Deploying to Kubernetes
+If you need a Kubernetes cloud environment to test with, you can get a free Openshift Developer sandbox at https://developers.redhat.com/sandbox.  
+
 You will have to create the configmap and secret before deploying the application. Examples can be found in the src/main/kube folder.
-You will also need to create a postgresql database (db 'quarkus') and a Kafka cluster. If you need a simple ephemeral kafka instance to test with on your cluster, you can apply the yaml for it from here:
-https://gist.github.com/hpgrahsl/47486d0d7f5197b38611ca0e066f2914
+You will also need to create a postgresql database (db 'quarkus') and a Kafka cluster. You can use the kafka.yml and postgresql.yml in the same src/main/kube folder if you want simple ephemeral test instances.
+
+You can apply these files with `kubectl apply -f src/main/kube`.
+
+Before building & deploying the container image, make sure to update the application.properties to point to your registry:
+```
+quarkus.container-image.registry=quay.io
+quarkus.container-image.group=kevindubois
+```
+
+Then you can package your app, build it into a container and push to a registry with `quarkus image push --also-build`
+And deploy it with `quarkus deploy`
+  
 
 PS: this is an MVP so no proper validation or tests are in place (yet) :)
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
-
-
 
 ## Running the application in dev mode
 
