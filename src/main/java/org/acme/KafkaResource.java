@@ -9,10 +9,12 @@ public class KafkaResource {
     
     @Transactional
     @Incoming("power")
-    public void receivePower(DevicePower power) {      
-        Log.info("Updated Device : " + power.device + "with power: " + power.power);
-        DevicePower.persist(power);
-        
+    public void receivePower(DevicePower devicePower) {      
+        Log.info("Received data: Device : " + devicePower.device() + "with power: " + devicePower.power());
+        PowerEntity powerEntity = new PowerEntity();
+        powerEntity.device=devicePower.device();
+        powerEntity.power=devicePower.power();
+        powerEntity.persist();        
     }
     
 }
