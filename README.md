@@ -4,9 +4,9 @@ This application demonstrates how to create a Quarkus application that retrieves
 
 It features:
 
-    - a __DevicePower__ class that represents the database entity
-    - a __KafkaResource__ class that shows how to retrieve messages from a Kafka topic
-    - a __PowerResource__ class that returns the values from the database table
+- a **DevicePower** class that represents the database entity
+- a **KafkaResource** class that shows how to retrieve messages from a Kafka topic
+- a **PowerResource** class that returns the values from the database table
 
 You can run this demo on your local machine with Quarkus Dev Mode (see below) which will spin up a Kafka and PostgreSQL testcontainer.
 The application.properties file shows how to set limits, requests, secrets and configmaps for your kubernetes environment.
@@ -21,7 +21,8 @@ You will also need to create a postgresql database (db 'quarkus') and a Kafka cl
 You can apply these files with `kubectl apply -f src/main/kube`.
 
 Before building & deploying the container image, make sure to update the application.properties to point to your registry:
-```
+
+```ini
 quarkus.container-image.registry=quay.io
 quarkus.container-image.group=kevindubois
 ```
@@ -35,9 +36,9 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 You can run your application in dev mode that enables live coding using:
 
-    ```bash
-    ./mvnw compile quarkus:dev
-    ```
+```bash
+./mvnw compile quarkus:dev
+```
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
 
@@ -45,9 +46,9 @@ You can run your application in dev mode that enables live coding using:
 
 The application can be packaged using:
 
-    ```bash
-    ./mvnw package
-    ```
+```bash
+./mvnw package
+```
 
 It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
 Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
@@ -56,9 +57,9 @@ The application is now runnable using `java -jar target/quarkus-app/quarkus-run.
 
 If you want to build an _über-jar_, execute the following command:
 
-    ```bash
-    ./mvnw package -Dquarkus.package.type=uber-jar
-    ```
+```bash
+./mvnw package -Dquarkus.package.type=uber-jar
+```
 
 The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
 
@@ -66,18 +67,16 @@ The application, packaged as an _über-jar_, is now runnable using `java -jar ta
 
 You can create a native executable using:
 
-    ```bash
-    ./mvnw package -Dnative
-    ```
+```bash
+./mvnw package -Dnative
+```
 
 Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
 
-    ```bash
-    ./mvnw package -Dnative -Dquarkus.native.container-build=true
-    ```
+```bash
+./mvnw package -Dnative -Dquarkus.native.container-build=true
+```
 
 You can then execute your native executable with: `./target/kubenative-1.0.0-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-
