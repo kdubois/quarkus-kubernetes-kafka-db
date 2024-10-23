@@ -25,8 +25,8 @@ public class PowerResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON) 
-    public List<PowerEntity> getDevices() {
-        return PowerEntity.listAll();
+    public List<Power> getDevices() {
+        return Power.listAll();
     }
 
     @POST

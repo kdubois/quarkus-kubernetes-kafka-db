@@ -11,7 +11,7 @@ public class KafkaResource {
     @Incoming("power")
     public void receivePower(DevicePower devicePower) {      
         Log.info("Received data: Device : " + devicePower.device() + "with power: " + devicePower.power());
-        PowerEntity powerEntity = new PowerEntity();
+        Power powerEntity = new Power();
         powerEntity.device=devicePower.device();
         powerEntity.power=devicePower.power();
         powerEntity.persist();        
