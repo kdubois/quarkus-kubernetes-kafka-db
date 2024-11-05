@@ -1,6 +1,5 @@
 package org.acme;
 
-
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
@@ -22,7 +21,6 @@ public class PowerResource {
     @Channel("power-out")
     Emitter<DevicePower> powerEmitter;
 
-
     @GET
     @Produces(MediaType.APPLICATION_JSON) 
     public List<Power> getDevices() {
@@ -40,6 +38,4 @@ public class PowerResource {
 
         return "Great Success!";
     }
-
-
 }
