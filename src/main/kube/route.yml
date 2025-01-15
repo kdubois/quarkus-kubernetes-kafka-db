@@ -1,0 +1,24 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    app.openshift.io/vcs-uri: git@github.com:kdubois/quarkus-kubernetes-kafka-db.git
+    app.quarkus.io/quarkus-version: 3.17.6
+    app.quarkus.io/commit-id: 092f3aa1cd8c1d672d3d017d3d3055f14eabb358
+    app.quarkus.io/vcs-uri: https://github.com/kdubois/quarkus-kubernetes-kafka-db.git
+    app.quarkus.io/build-timestamp: 2025-01-15 - 10:59:54 +0000
+  labels:
+    app.kubernetes.io/name: kubenative
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+    app.kubernetes.io/managed-by: quarkus
+    app.openshift.io/runtime: quarkus
+  name: kubenative
+spec:
+  port:
+    targetPort: http
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: kubenative

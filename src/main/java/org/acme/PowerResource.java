@@ -14,6 +14,13 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 
 import io.quarkus.logging.Log;
 
+/**
+ * This class is responsible for
+ * 1. Providing a REST API to retrieve all devices
+ * 2. Receiving power events from the PowerOut channel and processing them
+ */
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 @Path("/power")
 public class PowerResource {
 
@@ -21,12 +28,24 @@ public class PowerResource {
     @Channel("power-out")
     Emitter<DevicePower> powerEmitter;
 
+    /**
+     * This method retrieves all devices from the database and returns them as a JSON array.
+     *
+     * @return A JSON array containing all devices
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON) 
     public List<Power> getDevices() {
         return Power.listAll();
     }
 
+    /**
+     * This method receives a power event from a POST request and processes it.
+     * It sends the received power event to the PowerOut channel.
+     *
+     * @param devicePower The power event received
+     * @return A success message indicating that the power event was processed successfully
+     */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
