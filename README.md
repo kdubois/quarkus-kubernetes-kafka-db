@@ -2,6 +2,8 @@
 
 This application demonstrates how to create a Quarkus application that retrieves messages from a Kafka topic ("power") and inserts the events into a database. 
 
+Watch a live demo from the Jfokus conference here: https://youtu.be/haulxnEtjUc?si=D_gpALKS75UVR65V
+
 It features:
 
 - a **DevicePower** class that represents the database entity
