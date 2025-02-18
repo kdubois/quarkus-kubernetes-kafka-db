@@ -4,8 +4,6 @@ This application demonstrates how to create a Quarkus application that retrieves
 
 Watch a live demo from the Jfokus conference here: https://youtu.be/haulxnEtjUc?si=D_gpALKS75UVR65V
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/haulxnEtjUc?si=D_gpALKS75UVR65V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 It features:
 
 - a **DevicePower** class that represents the database entity
