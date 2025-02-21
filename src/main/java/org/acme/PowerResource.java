@@ -29,17 +29,6 @@ public class PowerResource {
     Emitter<DevicePower> powerEmitter;
 
     /**
-     * This method retrieves all devices from the database and returns them as a JSON array.
-     *
-     * @return A JSON array containing all devices
-     */
-    @GET
-    @Produces(MediaType.APPLICATION_JSON) 
-    public List<Power> getDevices() {
-        return Power.listAll();
-    }
-
-    /**
      * This method receives a power event from a POST request and processes it.
      * It sends the received power event to the PowerOut channel.
      *
@@ -56,5 +45,16 @@ public class PowerResource {
         powerEmitter.send(devicePower);
 
         return "Great Success!";
+    }
+
+    /**
+     * This method retrieves all devices from the database and returns them as a JSON array.
+     *
+     * @return A JSON array containing all devices
+     */
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Power> getDevices() {
+        return Power.listAll();
     }
 }

@@ -26,7 +26,9 @@ public class KafkaResource {
     @Transactional
     @Incoming("power")
     public void receivePower(DevicePower devicePower) {      
-        Log.info("Received data: Device : " + devicePower.device() + "with power: " + devicePower.power());
+        Log.info("Received data: Device : "
+                + devicePower.device()
+                + "with power: " + devicePower.power());
 
         Power.updatePower(devicePower);
     }
