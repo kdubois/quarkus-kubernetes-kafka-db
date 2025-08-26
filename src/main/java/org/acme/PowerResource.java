@@ -19,8 +19,6 @@ import io.quarkus.logging.Log;
  * 1. Providing a REST API to retrieve all devices
  * 2. Receiving power events from the PowerOut channel and processing them
  */
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
 @Path("/power")
 public class PowerResource {
 
@@ -55,6 +53,7 @@ public class PowerResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Power> getDevices() {
+        Log.info("Got a request to list all power devices");
         return Power.listAll();
     }
 }

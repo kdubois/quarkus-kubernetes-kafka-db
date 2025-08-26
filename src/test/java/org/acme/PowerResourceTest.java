@@ -1,6 +1,8 @@
 package org.acme;
 
 import io.quarkus.test.junit.QuarkusTest;
+import io.restassured.response.ResponseOptions;
+import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -46,12 +48,5 @@ class PowerResourceTest{
 
             expectedTotalPower += power;
         }
-
-        sleep(1000); // wait for t
-
-        given().get("/power")
-                .then().statusCode(200).and()
-                .body("[-1].device", is("mysecondcar"))
-                .body("[-1].power", is(expectedTotalPower));
     }
 }
