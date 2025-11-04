@@ -6,7 +6,7 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{
   "device": "mydevice",
-  "power": 121
+  "power": 100
 }'
 
 sleep 1;
