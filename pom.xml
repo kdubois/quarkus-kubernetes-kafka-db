@@ -5,7 +5,7 @@
   <artifactId>kubenative</artifactId>
   <version>1.0.0</version>
   <properties>
-    <compiler-plugin.version>3.14.0</compiler-plugin.version>
+    <compiler-plugin.version>3.15.0</compiler-plugin.version>
     <maven.compiler.release>21</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -13,7 +13,7 @@
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
     <quarkus.platform.version>3.35.3</quarkus.platform.version>
     <skipITs>true</skipITs>
-    <surefire-plugin.version>3.5.3</surefire-plugin.version>
+    <surefire-plugin.version>3.5.5</surefire-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -84,7 +84,7 @@
     <dependency>
       <groupId>io.quarkiverse.micrometer.registry</groupId>
       <artifactId>quarkus-micrometer-registry-otlp</artifactId>
-      <version>3.3.1</version>
+      <version>3.5.0</version>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
